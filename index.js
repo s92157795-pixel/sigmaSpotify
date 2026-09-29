@@ -92,7 +92,7 @@ async function displayAlbums() {
 
 
         let url = decodeURIComponent(e.href).replaceAll("\\", "/");
-        if (url.includes("/Music")) {
+        if (url.includes("/Music/")) {
             let part = url.split("/")
             let folder = (part.slice(-2)[0])
 
