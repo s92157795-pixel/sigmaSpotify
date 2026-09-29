@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+</head>
+
+<body>
+    <div class="first m1 bg-black ">
+        <div class="flex"><span class="logo m1 invert">
+                <img src="logo.svg" alt="" class="cursor">
+            </span>
+            <span class="home m3 invert  cursor">
+                <img src="home.svg" alt="" class="">
+            </span>
+            <div class="search m2 bg-gray2">
+                <span class="logo2 invert">
+                    <img src="search.svg" alt="" class="cursor">
+                </span>
+                <div class="input">
+                    <div class="placeholder">
+                        <input type="text" name="search" placeholder="What do you want to play?">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="icons m2 border">
+            <button class="m2 btn border cursor">Explore Premium</button>
+            <button class="arrow m2 flex border cursor">
+                <img src="arrow.svg" alt="" class="invert">
+                <div class="btn2">Install App</div>
+            </button>
+            <button class="bell flex border cursor">
+                <img src="bell.svg" alt="" class="invert">
+                <div class="public"><img src="public.svg" alt="" class="invert"> </div>
+            </button>
+        </div>
+    </div>
+    <div class="container flex bg-black ">
+        <div class="left border m2 border-r bg-gray">
+            <div class="cancel">
+                <img src="cancel.svg" alt="" class="invert">
+            </div>
+            <div class="heading  ">
+                <div class="flex"> <img class="invert cursor" src="library.svg" alt="">
+                    <h2 class="cursor"> Your Library</h2>
+                </div>
+                <div class="flex btn3 "><button class="plus m2 flex  bg-gray2 cursor">
+                        <img src="plus.svg" alt="" class="invert">
+                        <div class="create">Create</div>
+                    </button></div>
+            </div>
+            <div class="songlist">
+                <ul>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- right -->
+
+        <div class="right border m2 border-r bg-gray2">
+            <div class="hamburgur">
+                <img src="hamburger.svg" alt="" class="invert cursor">
+            </div>
+            <div class="spotifyplaylist">
+                <h3>Spotify Playlist</h3>
+
+                <div class="cardcontainer "></div>
+                <div class="playbar">
+                    <div class="seekbar">
+                        <div class="circle">
+
+                        </div>
+                    </div>
+                    <div class="abovebar">
+                        <div class="songinfo"></div>
+                        <div class="songbutton">
+                            <img width="35" src="previous.svg" alt="" class="m1" id="previous">
+                            <img width="35" src="play2.svg" alt="" class=" borderradius m1" id="play">
+                            <img width="35" src="next.svg" alt="" class="m1" id="next">
+                        </div>
+                        <div class="timevol flex">
+                            <div class="songtime">
+
+                            </div>
+                            <div class="volume">
+                                <img src="volume.svg" alt="" class="invert" width="27px" id="vol">
+                                <div class="range">
+                                    <input type="range" name="volume" id="" class="cursor">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
