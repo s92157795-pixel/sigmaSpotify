@@ -80,7 +80,7 @@ function showPlaylist() {
 }
 
 async function displayAlbums() {
-    let a = await fetch(`http://127.0.0.1:3000/music/`)
+    let a = await fetch(`http://127.0.0.1:3000/Music/`)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -92,20 +92,20 @@ async function displayAlbums() {
 
 
         let url = decodeURIComponent(e.href).replaceAll("\\", "/");
-        if (url.includes("/music")) {
+        if (url.includes("/Music")) {
             let part = url.split("/")
             let folder = (part.slice(-2)[0])
 
             // Get the metadata of the folder
 
-            let a = await fetch(`http://127.0.0.1:3000/music/${folder}/info.json`)
+            let a = await fetch(`http://127.0.0.1:3000/Music/${folder}/info.json`)
             let response = await a.json();
             console.log(response)
             cardcontainer.innerHTML = cardcontainer.innerHTML + `<div data-folder="${folder}" class="card" >
                         <div class="play">
                             <img src="play.svg" alt="" class="src">
                         </div>
-                        <img src="/music/${folder}/cover.jpg" alt="" class="src">
+                        <img src="/Music/${folder}/cover.jpg" alt="" class="src">
                         <h4>${response.title}</h4>
                         <p class="para1">
                             ${response.description}
@@ -118,7 +118,7 @@ async function displayAlbums() {
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", async () => {
             console.log("Fetching Songs")
-            songs = await getsongs(`music/${e.dataset.folder}`)
+            songs = await getsongs(`Music/${e.dataset.folder}`)
             document.querySelector(".left").style.left = "0"
             playMusic(songs[0])
 
@@ -130,7 +130,7 @@ async function displayAlbums() {
 
 async function main() {
     //Get the list of all songs
-    await getsongs("music/ncs")
+    await getsongs("Music/ncs")
     showPlaylist();
     playMusic(songs[0], true)
 
